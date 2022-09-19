@@ -56,3 +56,15 @@ https://github.com/developer-aaronlee/launching_website_test.git"""
 """Commit and push changes to remote in Github"""
 """Go to app in Heroku and click View Logs to check if there is any error. Then click Open App to check website"""
 
+"""Upgrade SQLite Database to PostgreSQL"""
+"""Go to app dashboard on Heroku and go to the Resources tab. Then search for Heroku Postgres"""
+"""Connect Heroku Postgres and app on Heroku. Select Hobby Dev - Free and Submit Order Form"""
+"""Go to Settings on Heroku and click Reveal Config Vars"""
+"""Create new value pair with key: DATABASE_URL1. Copy value from DATABASE_URL and change posgres:// to postgresql://"""
+"""On main.py in Pycharm, import os. Update database configuration line to app.config['SQLALCHEMY_DATABASE_URI'] = 
+os.environ.get ("DATABASE_URL1")"""
+"""Create new value pair in Heroku with key: SECRET_KEY and value from Pycharm"""
+"""Go to Pycharm interpreter and install psycopg2-binary"""
+"""Add psycopg2-binary and version to requirements.txt"""
+"""For project to work also locally, Add an alternative by updating database configuration line to app.config
+['SQLALCHEMY_DATABASE_URI'] = os.environ.get ("DATABASE_URL1", "sqlite:///blog.db")"""
